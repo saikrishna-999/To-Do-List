@@ -1,71 +1,86 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: 'poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
-.container{
+
+.container {
     width: 100%;
-    background: linear-gradient(110deg,#153677,#4e085f);
+    background: linear-gradient(110deg, #153677, #4e085f);
     min-height: 100vh;
     padding: 10px;
+    
 }
-.to-do-app{
-   max-width:540px;
+
+.to-do-app {
+    max-width: 540px;
     width: 100%;
     background: #fff;
-    margin: 20px;
     margin: 100px auto 20px;
     padding: 40px 30px 70px;
     border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.to-do-app h1{
+
+.to-do-app h1 {
     display: flex;
     color: #002765;
     align-items: center;
     margin-bottom: 20px;
-
+    font-size: 1.8rem; /* Adjust font size */
 }
-.to-do-app h1 img{
+
+.to-do-app h1 img {
     width: 40px;
     margin-left: 20px;
-
 }
-.row{
+
+.row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #edeef0;
     border-radius: 30px;
-    padding-left: 20px;
+    padding: 10px 20px; /* Adjust padding */
     margin-bottom: 25px;
 }
-input{
-    flex:1;
+
+input {
+    flex: 1;
     border: none;
     outline: none;
     background: transparent;
-    padding: 20px;
+    padding: 10px 20px; /* Adjust padding */
+    font-size: 1rem; /* Adjust font size */
 }
-button{
+
+button {
     border: none;
     outline: none;
-    padding: 16px 50px;
+    padding: 10px 20px; /* Adjust padding */
     background: #ff5945;
     color: #fff;
-    font-size: 16px;
+    font-size: 1rem; /* Adjust font size */
     cursor: pointer;
     border-radius: 40px;
+    transition: background 0.3s ease;
 }
-ul li{
+
+button:hover {
+    background: #e04b3a; /* Hover effect */
+}
+
+ul li {
     list-style: none;
-    font-size: 17px;
+    font-size: 1rem; /* Adjust font size */
     padding: 12px 8px 12px 50px;
     user-select: none;
     cursor: pointer;
     position: relative;
 }
-ul li::before{
+
+ul li::before {
     content: '';
     position: absolute;
     height: 28px;
@@ -77,19 +92,20 @@ ul li::before{
     top: 12px;
     left: 8px;
 }
-ul li.checked{
-    color:#555 ;
+
+ul li.checked {
+    color: #555;
     text-decoration: line-through;
-
 }
-ul li.checked::before{
+
+ul li.checked::before {
     background-image: url("images/checked.png");
-
 }
-ul li span{
+
+ul li span {
     position: absolute;
     right: 0;
-    top:5px;
+    top: 5px;
     width: 40px;
     height: 40px;
     font-size: 22px;
@@ -97,7 +113,63 @@ ul li span{
     line-height: 40px;
     text-align: center;
     border-radius: 50%;
+    cursor: pointer;
+    
 }
-ul li span:hover{
+
+ul li span:hover {
     background: #edeef0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .to-do-app {
+        padding: 30px 20px 60px;
+        margin: 60px auto 20px;
+    }
+
+    .to-do-app h1 {
+        font-size: 1.5rem; /* Smaller font size */
+    }
+
+    input {
+        padding: 10px; /* Reduced padding */
+        font-size: 0.9rem; /* Smaller font size */
+    }
+
+    button {
+        padding: 10px 20px; /* Reduced padding */
+        font-size: 0.9rem; /* Smaller font size */
+    }
+
+    ul li {
+        font-size: 0.9rem; /* Smaller font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .to-do-app {
+        padding: 20px 15px 50px;
+        margin: 40px auto 20px;
+    }
+
+    .to-do-app h1 {
+        font-size: 1.3rem; /* Even smaller font size */
+    }
+
+    .row {
+        flex-direction: column; /* Stack input and button */
+        align-items: stretch;
+    }
+
+    input,
+    button {
+        width: 100%; /* Full width */
+        margin-bottom: 10px; /* Spacing between input and button */
+    }
+
+    button {
+        padding: 10px; /* Smaller padding */
+        font-size: 0.9rem; /* Smaller font size */
+    }
 }
